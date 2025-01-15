@@ -1,0 +1,224 @@
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+  margin-left: 70px; /* Adjust as needed for your layout */
+}
+
+.main__content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.main__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #585858;
+  margin-bottom: 20px;
+}
+
+.main__user-icon {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.main__container {
+  max-width: 1200px; /* Ensure the content fits well in large screens */
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__greeting {
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #c4c7c5;
+  font-weight: 500;
+}
+
+.main__greeting span {
+  background: linear-gradient(16deg, #4b90ff, #ff5546);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Flexbox Layout for Cards */
+.main__cards {
+  display: flex; /* Changed from grid to flex */
+  gap: 20px; /* Space between the cards */
+  margin-bottom: 30px;
+  justify-content: flex-start; /* Align cards from the start of the row */
+  flex-wrap: wrap; /* Allow cards to wrap to next line on small screens */
+}
+
+.main__card {
+  flex: 1 1 250px; /* Flex-grow, flex-shrink, flex-basis for responsive sizing */
+  height: 180px;
+  padding: 20px;
+  background-color: #f0f4f9;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.main__card:hover {
+  background-color: #dfe4ea;
+  transform: translateY(-5px);
+}
+
+.main__card p {
+  color: #585858;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.main__card-icon {
+  width: 35px;
+  padding: 5px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.main__bottom {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  margin-top: auto;
+}
+
+.main__search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4f9;
+  padding: 10px 20px;
+  border-radius: 50px;
+  gap: 10px;
+}
+
+.main__search-label {
+  flex-grow: 1;
+}
+
+.main__search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.main__bottom-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.main__bottom-icon {
+  width: 24px;
+  cursor: pointer;
+}
+
+.main__bottom-info {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #777;
+}
+
+.result {
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+  display: none;
+}
+
+.result-title {
+  margin: 40px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result img {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.result-data {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.loader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader hr {
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 200% 100%;
+  height: 20px;
+  width: 100%;
+  animation: loading 3s infinite linear;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -800 0px;
+  }
+  100% {
+    background-position: 800px 0;
+  }
+}
+
+.result-data p{
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+
+}
+
+@media (max-width:600px){
+  .main__bottom input{
+    flex: none;
+    width:150px;
+  }
+  .main__bottom img{
+    width:20px;
+
+  }
+  .search-box{
+    padding: 5px 10px;
+  }
+  .search-box div{
+    gap: 5px;
+  }
+}
